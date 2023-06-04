@@ -3,6 +3,8 @@ package org.altimetrik;
 import org.altimetrik.Base.TestBase;
 import org.altimetrik.Pages.AssertMethods_3;
 import org.altimetrik.Pages.GoogleSearch_1;
+import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,15 +31,14 @@ public class AssertMethodsTest_3 extends TestBase {
 
     @Test(priority = 3)
     public void assertTest(){
-//        String str1 = "selenium";
-//        String str2 = "selenium";
-//        String str3=new String("selenium");
-//        String str4=null;
-//        Assert.assertSame(assertMethods.assertExample(),new String("DEMOQA"));
         Assert.assertNotSame(assertMethods.assertExample(),new String("DEMOQA"));
+    }
 
-
-
+    @Test(priority = 4)
+    public void assertThrowTest(){
+        Assert.assertThrows(InvalidSelectorException.class, () ->{
+            assertMethods.nonexistenceButtonSelect();
+        });
     }
 
     @AfterMethod
