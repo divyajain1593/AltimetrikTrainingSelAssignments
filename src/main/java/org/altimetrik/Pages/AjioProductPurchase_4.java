@@ -56,7 +56,7 @@ public class AjioProductPurchase_4 extends TestBase {
 
     public boolean isLoginSuccess() {
         signinButton.click();
-        emailTextBox.sendKeys("divyajain.1593@gmail.com");
+        emailTextBox.sendKeys("testuser@gmail.com");
         continueButton.click();
         SeleniumUtil.dynamicWait(otpBox, driver);
         SeleniumUtil.wait(20);
